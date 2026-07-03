@@ -1,0 +1,16 @@
+{
+  "name": "shuttlegate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "shuttlegate-app"
+  ],
+  "scripts": {
+    "api": "npm run dev -w apps/api",
+    "api:deploy": "npm run deploy -w apps/api",
+    "mobile": "npm run dev -w shuttlegate-app"
+  }
+}

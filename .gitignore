@@ -1,0 +1,17 @@
+node_modules/
+.wrangler/
+dist/
+*.log
+.env
+.dev.vars
+.DS_Store
+
+# Internal planning docs — not for public distribution
+AGENTS.md
+PLAN.md
+ShuttleGate_TechSpec.md
+
+# Agent/tooling metadata — not part of the app
+.claude/
+.agents/
+skills-lock.json

@@ -1,0 +1,27 @@
+{
+  "name": "@shuttlegate/api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --env production",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply shuttle-gate-db --env production",
+    "db:migrate:local": "wrangler d1 migrations apply shuttle-gate-db --local",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.2.2",
+    "@shuttlegate/types": "*",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.6.0",
+    "jose": "^5.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "drizzle-kit": "^0.30.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^3.63.0"
+  }
+}

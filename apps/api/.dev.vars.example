@@ -1,0 +1,19 @@
+# Copy this file to .dev.vars and fill in real values for local development.
+# NEVER commit .dev.vars to version control.
+
+JWT_SECRET=dev-secret-change-me-in-production
+APP_URL=http://localhost:8787
+CURRENCY=NGN
+CORS_ORIGINS=
+
+# Flutterwave (payments)
+FLUTTERWAVE_PUBLIC_KEY=
+FLUTTERWAVE_SECRET_KEY=
+FLUTTERWAVE_WEBHOOK_HASH=
+
+# Zepto by Zoho (OTP SMS)
+ZEPTO_API_KEY=
+ZEPTO_SENDER_ID=ShuttleGate
+
+# Admin API key for cash-out processing
+ADMIN_API_KEY=dev-admin-key-change-me-in-production

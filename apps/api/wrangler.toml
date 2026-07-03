@@ -1,0 +1,64 @@
+name = "shuttlegate-api"
+main = "src/index.ts"
+compatibility_date = "2024-07-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+ALLOW_DEV_STUBS = "true"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "shuttle-gate-db"
+database_id = "local"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "local"
+
+[[queues.producers]]
+binding = "SCAN_QUEUE"
+queue = "scan-events"
+
+[[queues.consumers]]
+queue = "scan-events"
+max_batch_size = 1
+max_batch_timeout = 0
+max_concurrency = 1
+
+[triggers]
+crons = ["0 0 * * *"]
+
+# Production deploy target: `wrangler deploy --env production`.
+# ALLOW_DEV_STUBS is deliberately omitted (unset != "true" => stubs refuse
+# to run). Secrets (JWT_SECRET, FLUTTERWAVE_*, ZEPTO_*) must be set via
+# `wrangler secret put <NAME> --env production`, not committed here.
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Production resource IDs must be provisioned first:
+#   wrangler d1 create shuttle-gate-db
+#   wrangler kv namespace create KV
+# Then paste the returned IDs below. These are NOT secrets, but they are
+# account-specific and must be correct for the production deploy target.
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "shuttle-gate-db"
+database_id = "<PRODUCTION_D1_DATABASE_ID>"
+
+[[env.production.kv_namespaces]]
+binding = "KV"
+id = "<PRODUCTION_KV_NAMESPACE_ID>"
+
+[[env.production.queues.producers]]
+binding = "SCAN_QUEUE"
+queue = "scan-events"
+
+[[env.production.queues.consumers]]
+queue = "scan-events"
+max_batch_size = 1
+max_batch_timeout = 0
+max_concurrency = 1
+
+[env.production.triggers]
+crons = ["0 0 * * *"]
