@@ -2,8 +2,7 @@
 
 Cashless campus transport payments. Students top up a points wallet and pay drivers by scanning a QR code; drivers collect fares, issue refunds, and cash out their earnings.
 
-Built for African campuses with variable connectivity — edge-deployed, integer-only accounting, no floating point anywhere near money.
-
+Built for African campuses with variable connectivity, edge-deployed and always available.
 ## How it works
 
 - **Students** register with a phone number, verify via SMS OTP, top up their wallet, and pay for rides by scanning a driver's QR code.
