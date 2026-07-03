@@ -9,7 +9,6 @@ Built for African campuses with variable connectivity — edge-deployed, integer
 - **Students** register with a phone number, verify via SMS OTP, top up their wallet, and pay for rides by scanning a driver's QR code.
 - **Drivers** generate two kinds of QR codes: a **temporary** session for a single trip, or a **long-running "banner" QR** that can be printed and left on the windshield, collecting fares from multiple riders over time.
 - Drivers can issue refunds, view earnings, and request cash-outs to mobile money or bank.
-- The app is usable offline for viewing your last known balance, and payments are blocked (not silently dropped) when there's no connection.
 
 ## Stack
 
